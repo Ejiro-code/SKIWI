@@ -1,0 +1,25 @@
+services:
+  pythonapp:
+    build: ./pythonapp/
+    restart: unless-stopped
+    ports:
+      - '8501:8501'
+    #command: sh "sleep 10s ; streamlit run ./Skiwi_Home.py"
+    depends_on:
+      - mysql
+    volumes:
+      - ./pythonapp:/usr/src/app
+
+  mysql:
+    build: ./mysql/
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'SKIWI_DB'
+      MYSQL_ROOT_PASSWORD: 'goodgradeplease'
+    ports:
+      - '3306:3306'
+    volumes: 
+       - ./mysql:/docker-entrypoint-initdb.d
+
+  # volumes:
+  #     - my_sql_data
