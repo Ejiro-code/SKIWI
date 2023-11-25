@@ -204,6 +204,7 @@ if st.session_state["Search"]:
                     finished = False
                 elif user_val == '':
                     st.write(f'Value cannot be Null... Error on column {k}')
+                    finished = False
                 else:
                     continue
 
