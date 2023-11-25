@@ -163,6 +163,7 @@ if submit:
         elif user_val == "":
             st.write(
                 f'Values cannot be left NULL..Error on column {k}')
+            finished = False
         else:
             continue
 
