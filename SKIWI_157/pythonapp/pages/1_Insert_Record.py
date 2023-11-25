@@ -160,6 +160,8 @@ if submit:
         elif (k.endswith('_ID') or k.endswith('_NUMBER')) and len(user_val) == 0:
             st.write('Inappropriate ID value. Should be have 10 characters exactly')
             finished = False
+        elif user_val == '':
+            st.write(f'Value cannot be Null... Error on column {k}')
         else:
             continue
 
