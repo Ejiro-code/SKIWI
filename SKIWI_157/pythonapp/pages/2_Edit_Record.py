@@ -202,6 +202,9 @@ if st.session_state["Search"]:
                     st.write(
                         'Inappropriate ID value. Should be have 10 characters exactly')
                     finished = False
+                elif user_val == "":
+                    st.write(
+                        f'Values cannot be left NULL..Error on column {k}')
                 else:
                     continue
 
